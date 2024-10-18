@@ -26,21 +26,61 @@
   </script>
   <!--web style-->
   <style>
-
     /*font-family*/
     /*From HarmonyOS Sans Fonts*/
+
+    /*font-en*/
     @font-face {
       font-family: "Light";
-      src: url("./font/HarmonyOS_Sans_SC_Light.ttf");
+      src: url("./font/HarmonyOS_Sans_Light.ttf");
       font-weight: normal;
       font-style: normal;
     }
 
     @font-face {
       font-family: "Regular";
+      src: url("./font/HarmonyOS_Sans_Regular.ttf");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    h1.en {
+      font-family: Regular;
+    }
+
+    h2.en {
+      font-family: Regular;
+    }
+
+    p.en {
+      font-family: Light;
+    }
+
+    /*font-zh*/
+    @font-face {
+      font-family: "Light_SC";
+      src: url("./font/HarmonyOS_Sans_SC_Light.ttf");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "Regular_SC";
       src: url("./font/HarmonyOS_Sans_SC_Regular.ttf");
       font-weight: normal;
       font-style: normal;
+    }
+
+    h1.zh {
+      font-family: Regular_SC;
+    }
+
+    h2.zh {
+      font-family: Regular_SC;
+    }
+
+    p.zh {
+      font-family: Light_SC;
     }
 
     /*Overall*/
@@ -53,14 +93,11 @@
       font-size: 5em;
       font-weight: 500;
       margin-bottom: 0;
-      font-family: Regular;
     }
 
     h2 {
       font-weight: 500;
       font-size: 2.2em;
-      font-family: Regular;
-      margin-bottom: auto;
     }
 
     p {
@@ -68,7 +105,6 @@
       font-weight: 300;
       line-height: 1.4;
       max-width: 36em;
-      font-family: Light;
     }
 
     a {
@@ -115,10 +151,10 @@
 </head>
 
 <body>
-  <div id="en" class="en">
-    <h1>Hello.</h1>
-    <h2>My name is Yoseya.</h2>
-    <p>
+  <div id="en">
+    <h1 class="en">Hello.</h1>
+    <h2 class="en">My name is Yoseya.</h2>
+    <p class="en">
       I am an independent developer.<br>
       At present, I mainly study physics and computer science.<br>
       I have a strong interest in quantum Information, and particle physics.<br>
@@ -130,7 +166,7 @@
       Or preview and view their details in my
       <a href="https://yoseya2410.github.io/docs/">idea workshop</a>.
     </p>
-    <p>
+    <p class="en">
       I'm from China. My Chinese name is 张新旺(zhāng xīn wàng).<br>
       I long to move forward with more like-minded partners. <br>
       If you also love physics or computer science,
@@ -140,10 +176,10 @@
     </p>
   </div>
 
-  <div id="zh" class="zh">
-    <h1>你好</h1>
-    <h2>My name is Yoseya.</h2>
-    <p>
+  <div id="zh">
+    <h1 class="zh">你好</h1>
+    <h2 class="zh">My name is Yoseya.</h2>
+    <p class="zh">
       我是一名独立开发者。<br>
       目前，我主要学习物理学与计算机科学，<br>
       我对量子信息和粒子物理学怀有浓厚兴趣。<br>
@@ -151,7 +187,7 @@
       我的许多项目都是开源的，你可以在我的<a href="https://github.com/Yoseya2410">GitHub</a>上找到它们，<br>
       或者在我的<a href="https://yoseya2410.github.io/docs/">创意作坊</a>中预览和深入了解每一个项目的详情。
     </p>
-    <p>
+    <p class="zh">
       我渴望与更多志同道合的伙伴一同前行。<br>如果你也热爱物理学或计算机科学，<br>
       欢迎通过<a href="mailto:yoseya2410@outlook.com">电子邮件</a>与我取得联系。<br>
       也许我们可以成为共同探索知识宇宙的伙伴，<br>
