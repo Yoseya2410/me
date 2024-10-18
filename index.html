@@ -178,13 +178,13 @@
 
   <div id="zh">
     <h1 class="zh">你好</h1>
-    <h2 class="zh">My name is Yoseya.</h2>
+    <h2 class="en">My name is Yoseya.</h2>
     <p class="zh">
       我是一名独立开发者。<br>
       目前，我主要学习物理学与计算机科学，<br>
       我对量子信息和粒子物理学怀有浓厚兴趣。<br>
       我坚信知识的力量，热衷于把所学到的知识整理在<a href="https://yoseya2410.github.io/">笔记</a>中。<br>
-      我的许多项目都是开源的，你可以在我的<a href="https://github.com/Yoseya2410">GitHub</a>上找到它们，<br>
+      我的许多项目都是开源的，你可以在我的<a href="https://github.com/Yoseya2410" class="en">GitHub</a>上找到它们，<br>
       或者在我的<a href="https://yoseya2410.github.io/docs/">创意作坊</a>中预览和深入了解每一个项目的详情。
     </p>
     <p class="zh">
@@ -197,18 +197,15 @@
   <script>
     var language = navigator.language;
     if (language == "zh-CN") {
-      document.getElementById("en").style.display = "none";
+      //document.getElementById("en").style.display = "none";
     } else {
-      document.getElementById("zh").style.display = "none";
+      //document.getElementById("zh").style.display = "none";
     }
+    document.getElementById("zh").style.display = "none";
     document.onkeydown = onKeyDown;
     function onKeyDown() {
       if (window.event.keyCode == 16) {
         if (language == "zh-CN") {
-          document.getElementById("zh").style.display = "none";
-          document.getElementById("en").style.display = "inline";
-        }
-        else {
           document.getElementById("en").style.display = "none";
           document.getElementById("zh").style.display = "inline";
         }
