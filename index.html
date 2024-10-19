@@ -130,6 +130,10 @@
       top: 0%;
     }
 
+    .hidden {
+      opacity: 0;
+    }
+
     /*Mobile width adaptation*/
     @media screen and (max-width: 1000px) {}
 
@@ -159,7 +163,7 @@
       At present, I mainly study physics and computer science.<br>
       I have a strong interest in quantum Information, and particle physics.<br>
       I firmly believe in the power of knowledge <br>
-      and am passionate about organizing what I have learned in my
+      and am passionate about organizing what I have learned into my
       <a href="https://yoseya2410.github.io/">notes</a>.<br>
       Most of my projects are open source,You can see them on my
       <a href="https://github.com/Yoseya2410">GitHub</a>,<br>
@@ -194,20 +198,65 @@
       甚至发展成为无话不谈的好友。
     </p>
   </div>
+
+  <div id="tip_zh" style="position: fixed; top: 10px; color:#a5a5a5;">你在使用汉语？按下 shift 键转换为中文</div>
+
   <script>
-    var language = navigator.language;
-    if (language == "zh-CN") {
-      //document.getElementById("en").style.display = "none";
-    } else {
-      //document.getElementById("zh").style.display = "none";
+    var shift = 0
+    //按下Shift键切换语言模式（英转中/中转英）
+    function e2c() {
+      if (shift % 2 == 0) {
+        document.getElementById("en").style.display = "inline";
+        document.getElementById("zh").style.display = "none";
+      } else {
+        document.getElementById("en").style.display = "none";
+        document.getElementById("zh").style.display = "inline";
+      }
     }
+    //隐藏提示文本
+    function hideTip_zh() {
+      setTimeout(() => {
+        document.getElementById('tip_zh').style.transition = "opacity 1s ease";
+        document.getElementById('tip_zh').style.opacity = 0;
+      }, 3000);
+    }
+    //设置两次Shift键之后不再显示提示文本
+    function TipShow() {
+      var language = navigator.language;
+      if (language == "zh-CN") {
+        if (shift >= 2) {
+          document.getElementById("tip_zh").style.display = "none";
+        } else {
+          document.getElementById("tip_zh").innerHTML = "按下 shift 键转换为英文";
+          document.getElementById("tip_zh").style.display = "inline";
+          document.getElementById('tip_zh').style.opacity = 1;
+          hideTip_zh()
+        }
+      }
+    }
+    //提示文本初始化
+    function tip_INT() {
+      var language = navigator.language;
+      if (language == "zh-CN") {
+        document.getElementById("tip_zh").style.display = "inline";
+      } else {
+        document.getElementById("tip_zh").style.display = "none";
+      }
+    }
+  
+    tip_INT()
+    hideTip_zh()
     document.getElementById("zh").style.display = "none";
     document.onkeydown = onKeyDown;
     function onKeyDown() {
-      if (window.event.keyCode == 16) {
+      if (event.keyCode === 16 && !event.ctrlKey && !event.altKey && !event.metaKey) {
+        shift += 1;
+        var language = navigator.language;
         if (language == "zh-CN") {
-          document.getElementById("en").style.display = "none";
-          document.getElementById("zh").style.display = "inline";
+          e2c()
+          TipShow()
+        } else {
+          e2c()
         }
       }
     }
