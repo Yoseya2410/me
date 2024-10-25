@@ -6,9 +6,20 @@
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--microsoft webmaster-->
+  
+  <!--microsoft webmaster
   <meta name="msvalidate.01" content="B6576B71940A163919B4737E9A751485" />
-  <!--google analytics-->
+  -->
+  <!--microsoft clarity
+   <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "g72h5ot00j");
+  </script>
+  -->
+  <!--google analytics
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJ20HF9G4J"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -16,14 +27,8 @@
     gtag('js', new Date());
     gtag('config', 'G-PJ20HF9G4J');
   </script>
-  <!--microsoft clarity-->
-  <script type="text/javascript">
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(window, document, "clarity", "script", "g72h5ot00j");
-  </script>
+  -->
+
   <!--web style-->
   <style>
     /*font-family*/
@@ -199,7 +204,8 @@
     </p>
   </div>
 
-  <div id="tip_zh" style="position: fixed; top: 10px; color:#a5a5a5; transition: opacity 1s ease;">你在使用汉语？按下 shift 键转换为中文</div>
+  <div id="tip_zh" style="position: fixed; top: 10px; color:#a5a5a5; transition: opacity 1s ease;">你在使用汉语？按下 shift
+    键转换为中文</div>
 
   <script>
     var shift = 0
@@ -245,12 +251,12 @@
           document.getElementById('tip_zh').style.transition = "opacity 1s ease";
           document.getElementById('tip_zh').style.opacity = 1;
           hideTip_zh()
-      }, 1500);
+        }, 1500);
       } else {
         document.getElementById("tip_zh").style.display = "none";
       }
     }
-  
+
     tip_INT()
     document.getElementById("zh").style.display = "none";
     document.onkeydown = onKeyDown;
