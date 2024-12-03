@@ -118,9 +118,9 @@
       white-space: nowrap;
       color: #121314;
       position: relative;
-      font-weight: 600;
       
     }
+
 
     a:after {
       content: '';
@@ -163,6 +163,7 @@
       p.en {
         font-size: 1.3em;
       }
+
       p.zh {
         font-size: 1.5em;
       }
@@ -180,14 +181,17 @@
       p.en {
         font-size: 1.25em;
       }
+
       p.zh {
         font-size: 1.5em;
       }
     }
+
     @media screen and (max-width: 800px) {
       p.en {
         font-size: 1.2em;
       }
+
       p.zh {
         font-size: 1.4em;
       }
@@ -197,6 +201,7 @@
       p.en {
         font-size: 1.1em;
       }
+
       p.zh {
         font-size: 1.35em;
       }
@@ -206,6 +211,7 @@
       p.en {
         font-size: 1em;
       }
+
       h1 {
         font-size: 4.8em;
       }
@@ -215,11 +221,13 @@
         font-size: 2em;
       }
     }
+
     @media screen and (max-width: 500px) {
       p.en {
         font-size: 0.9em;
 
       }
+
       h1 {
         font-size: 4.8em;
       }
@@ -295,6 +303,15 @@
     键转换为中文</div>
 
   <script>
+    window.onload = function () {
+      var links = document.querySelectorAll('a');
+    
+    // 遍历这些元素并设置 font-weight 属性
+    links.forEach(function(link) {
+        link.style.fontWeight = '600';
+    });
+    };
+
     var shift = 0
     document.getElementById('tip_zh').style.transition = "opacity 1s ease";
     //按下Shift键切换语言模式（英转中/中转英）
