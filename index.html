@@ -118,9 +118,8 @@
       white-space: nowrap;
       color: #121314;
       position: relative;
-      
-    }
 
+    }
 
     a:after {
       content: '';
@@ -305,11 +304,15 @@
   <script>
     window.onload = function () {
       var links = document.querySelectorAll('a');
-    
-    // 遍历这些元素并设置 font-weight 属性
-    links.forEach(function(link) {
+      var zhLinks = document.querySelectorAll('p.zh a');
+
+      links.forEach(function (link) {
         link.style.fontWeight = '600';
-    });
+      });
+
+      zhLinks.forEach(function (link) {
+        link.style.fontFamily = 'Light_SC';
+      });
     };
 
     var shift = 0
@@ -342,6 +345,10 @@
           document.getElementById("tip_zh").style.display = "inline";
           document.getElementById('tip_zh').style.opacity = 1;
           hideTip_zh()
+          var zhLinks = document.querySelectorAll('p.zh a');
+          zhLinks.forEach(function (link) {
+            link.style.fontFamily = 'Light_SC';
+          });
         }
       }
     }
