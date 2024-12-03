@@ -6,7 +6,7 @@
   <meta name="google" content="notranslate" />
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!--microsoft webmaster
   <meta name="msvalidate.01" content="B6576B71940A163919B4737E9A751485" />
   -->
@@ -110,6 +110,7 @@
       font-weight: 300;
       line-height: 1.4;
       max-width: 36em;
+      color: #2f2f2f;
     }
 
     a {
@@ -117,6 +118,8 @@
       white-space: nowrap;
       color: #121314;
       position: relative;
+      font-weight: 600;
+      
     }
 
     a:after {
@@ -139,8 +142,92 @@
       opacity: 0;
     }
 
+    #zh {
+      display: none;
+    }
+
     /*Mobile width adaptation*/
-    @media screen and (max-width: 1000px) {}
+    @media screen and (max-width: 1200px) {
+      p.en {
+        font-size: 1.5em;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      p.en {
+        font-size: 1.4em;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      p.en {
+        font-size: 1.3em;
+      }
+      p.zh {
+        font-size: 1.5em;
+      }
+
+      h1 {
+        font-size: 4.9em;
+      }
+
+      h2 {
+        font-size: 2.1em;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      p.en {
+        font-size: 1.25em;
+      }
+      p.zh {
+        font-size: 1.5em;
+      }
+    }
+    @media screen and (max-width: 800px) {
+      p.en {
+        font-size: 1.2em;
+      }
+      p.zh {
+        font-size: 1.4em;
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      p.en {
+        font-size: 1.1em;
+      }
+      p.zh {
+        font-size: 1.35em;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      p.en {
+        font-size: 1em;
+      }
+      h1 {
+        font-size: 4.8em;
+      }
+
+
+      h2 {
+        font-size: 2em;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      p.en {
+        font-size: 0.9em;
+
+      }
+      h1 {
+        font-size: 4.8em;
+      }
+
+      h2 {
+        font-size: 1.9em;
+      }
+    }
 
     /*Dark Mode */
     @media (prefers-color-scheme: dark) {
@@ -187,7 +274,7 @@
 
   <div id="zh">
     <h1 class="zh">你好</h1>
-    <h2 class="en">My name is Yoseya.</h2>
+    <h2 class="zh">My name is Yoseya.</h2>
     <p class="zh">
       我是一名独立开发者。<br>
       目前，我主要学习物理学与计算机科学，<br>
@@ -258,7 +345,7 @@
     }
 
     tip_INT()
-    document.getElementById("zh").style.display = "none";
+    //document.getElementById("zh").style.display = "none";
     document.onkeydown = onKeyDown;
     function onKeyDown() {
       if (event.keyCode === 16 && !event.ctrlKey && !event.altKey && !event.metaKey) {
