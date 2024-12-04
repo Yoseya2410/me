@@ -87,6 +87,10 @@
     p.zh {
       font-family: Light_SC;
     }
+    p.zh a {
+      font-family: Regular_SC;
+    }
+    
 
     /*Overall*/
     body {
@@ -208,13 +212,15 @@
 
     @media screen and (max-width: 600px) {
       p.en {
-        font-size: 1em;
+        font-size: 1.05em;
       }
 
       h1 {
         font-size: 4.8em;
       }
-
+      p.zh {
+        font-size: 1.3em;
+      }
 
       h2 {
         font-size: 2em;
@@ -223,8 +229,11 @@
 
     @media screen and (max-width: 500px) {
       p.en {
-        font-size: 0.9em;
+        font-size: 1em;
+      }
 
+      p.zh {
+        font-size: 1.2em;
       }
 
       h1 {
@@ -233,6 +242,22 @@
 
       h2 {
         font-size: 1.9em;
+      }
+    }
+    @media screen and (max-width: 420px) {
+      p.en {
+        font-size: 0.9em;
+      }
+      p.zh {
+        font-size: 1.2em;
+      }
+    }
+    @media screen and (max-width: 380px) {
+      p.en {
+        font-size: 0.85em;
+      }
+      p.zh {
+        font-size: 1.1em;
       }
     }
 
@@ -303,16 +328,17 @@
 
   <script>
     window.onload = function () {
-      var links = document.querySelectorAll('a');
-      var zhLinks = document.querySelectorAll('p.zh a');
+      var enlinks = document.querySelectorAll('p.en a');
+      var zhlinks = document.querySelectorAll('p.zh a');
 
-      links.forEach(function (link) {
-        link.style.fontWeight = '600';
+      enlinks.forEach(function (link) {
+        link.style.fontFamily = "Regular";
       });
 
-      zhLinks.forEach(function (link) {
-        link.style.fontFamily = 'Light_SC';
+      zhlinks.forEach(function (link) {
+        link.style.fontFamily = "Regular_SC";
       });
+
     };
 
     var shift = 0
@@ -345,10 +371,6 @@
           document.getElementById("tip_zh").style.display = "inline";
           document.getElementById('tip_zh').style.opacity = 1;
           hideTip_zh()
-          var zhLinks = document.querySelectorAll('p.zh a');
-          zhLinks.forEach(function (link) {
-            link.style.fontFamily = 'Light_SC';
-          });
         }
       }
     }
